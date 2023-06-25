@@ -7,19 +7,21 @@ final class NumberCheckerTest extends TestCase{
 
     public function testClassConstructor(){
 
-        $num1 = new NumberChecker(25);
-        $num2 = new NumberChecker(-24);
-                
-        $this->assertIsBool($num1->isEven());
-        $this->assertIsBool($num1->isPositive());
-        $this->assertIsBool($num2->isEven());
-        $this->assertIsBool($num2->isPositive());
+     $num1 = new NumberChecker(6);
+     $this->assertTrue($num1->isEven());
+     $this->assertTrue($num1->isPositive());
 
-        $this->assertFalse($num1->IsEven());
-        $this->assertTrue($num1->isPositive());
-        
-        $this->assertTrue($num2->IsEven());
-        $this->assertFalse($num2->isPositive());
+     $num2 = new NumberChecker(3);
+     $this->assertFalse($num2->isEven());
+     $this->assertTrue($num2->isPositive());
+
+     $num3 = new NumberChecker(-6);
+     $this->assertTrue($num3->isEven());
+     $this->assertFalse($num3->isPositive());
+
+     $num4 = new NumberChecker(-3);
+     $this->assertFalse($num4->isEven());
+     $this->assertFalse($num4->isPositive());
 
     }
 

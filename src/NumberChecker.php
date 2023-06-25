@@ -11,8 +11,10 @@ class NumberChecker  {
 		return $this->number > 0;
 	}
 
+	public function __toString(): string
+    {
+        return 'NumberChecker: ' . $this->number;
+    }
+
 }
-$num = new NumberChecker(25);
-var_dump ($num->isEven()) . "<br>";
-var_dump ($num->isPositive());
 ?>
